@@ -18,7 +18,7 @@ ja:
       mem_info: メールアドレス
       mem_birth: 生年月日
       mem_gra: 卒業予定日
-      des_occupation: 希望職種
+      des_occuparion: 希望職種
       des_location: 希望勤務地
       password: パスワード
       password_confirmation: パスワード確認

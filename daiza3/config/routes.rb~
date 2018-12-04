@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'com_pages/index'
+  get 'com_pages/show'
+  get 'com_pages/new'
+  get 'com_pages/edit'
   get '/login_com', to: 'sessions_com#new'
   post '/login_com', to: 'sessions_com#create'
   delete '/logout_com', to: 'sessions_com#destroy'
@@ -11,6 +15,5 @@ Rails.application.routes.draw do
   resources :users
   resources :user_pages
   resources :companys
-  resources :com_pages
   resources :tops
 end
