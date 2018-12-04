@@ -18,6 +18,13 @@ class CompanysController < ApplicationController
 
   
   def edit
+    @company = current_company
+  end
+
+  def update
+    company = current_company
+    company.update!(company_params)
+    redirect_to com_pages_path, notice:"更新完了"
   end
 
   def show

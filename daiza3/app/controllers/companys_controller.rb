@@ -1,4 +1,6 @@
 # coding: utf-8
+
+# coding: utf-8
 class CompanysController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
