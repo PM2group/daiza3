@@ -4,7 +4,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :com_name
       t.string :occupations
       t.string :location
-      t.string :com_info
+      t.string :com_info, null: false
       t.string :condition
       t.integer :salary
       t.string :password_digest

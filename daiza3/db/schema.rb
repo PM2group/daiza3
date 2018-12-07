@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_024552) do
+ActiveRecord::Schema.define(version: 2018_12_04_113323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.string "com_name"
-    t.string "occupations"
-    t.string "location"
-    t.string "com_info", null: false
-    t.string "condition"
-    t.integer "salary"
+    t.string "com_name", limit: 50, null: false
+    t.string "occupations", limit: 100, null: false
+    t.string "location", limit: 50, null: false
+    t.string "com_info", limit: 30, null: false
+    t.string "condition", limit: 100, null: false
+    t.integer "salary", null: false
     t.string "password_digest"
     t.string "frame"
     t.string "lang"
@@ -32,26 +32,36 @@ ActiveRecord::Schema.define(version: 2018_12_02_024552) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "company_offers", force: :cascade do |t|
+    t.integer "com_id"
+    t.integer "mem_id"
+    t.date "senddate"
+    t.boolean "acc_flag"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string "mem_name"
-    t.string "user_name"
-    t.string "mem_info", null: false
-    t.date "mem_birth"
-    t.date "mem_gra"
-    t.string "des_occupation"
-    t.string "des_location"
-    t.string "password_digest"
+    t.string "mem_name", limit: 20, null: false
+    t.string "user_name", limit: 10, null: false
+    t.string "mem_info", limit: 30, null: false
+    t.string "mem_birth", null: false
+    t.string "mem_gra", null: false
+    t.string "des_occupation", limit: 100, null: false
+    t.string "des_location", limit: 50, null: false
+    t.string "password_digest", null: false
     t.string "pic"
-    t.string "univercity"
+    t.string "univercity", limit: 20
     t.string "circle"
     t.string "labo"
-    t.string "study"
-    t.string "deliver"
-    t.string "activity"
+    t.string "study", limit: 100
+    t.string "deliver", limit: 10
+    t.string "activity", limit: 50
     t.string "qualification"
-    t.string "lang_experience"
-    t.string "system_ex"
-    t.string "flame_ex"
+    t.string "lang_ex"
+    t.string "system_ex", limit: 50
+    t.string "flame_ex", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
